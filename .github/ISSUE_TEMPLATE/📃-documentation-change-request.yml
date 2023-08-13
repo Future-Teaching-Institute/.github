@@ -1,0 +1,58 @@
+name: "\U0001F4C3 Documentation Change Request"
+description: " If there is documentation changes needed use this."
+title: "[Doc] - "
+labels: ["documentation"]
+projects: []
+assignees: []
+body: 
+  - type: markdown
+    attributes: 
+      value: Provide a clear and concise description of the documentation change or improvement you are suggesting. 
+  - type: textarea
+    id: current-documentation
+    attributes:
+      label: Current Documentation
+      description: If applicable, provide the link or specific section of the existing documentation that needs modification.
+    validations: 
+      required: false
+  - type: textarea
+    id: propsed-changes
+    attributes: 
+      label: Proposed Changes
+      description: Describe the proposed change or improvement in detail. What do you suggest should be added, removed, or modified?
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation for Change
+      description: Explain the reason behind this proposed documentation change. Is there a specific problem or confusion that you are trying to address?
+    validations: 
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Add any additional context, screenshots, or examples that can help in understanding and implementing the suggested change.
+    validations: 
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Pre-Submission Checklist
+      description: Please ensure you've completed the below before posting your question
+      options:
+        - label: I have read the project's contributing guidelines and documentation.
+          required: true
+        - label: I have searched the existing issues to avoid duplicates.
+          required: true
+        - label: I am willing to contribute to this change and follow up on any feedback or questions.
+          required: true
+  - type: input
+    id: contact
+    attributes: 
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false

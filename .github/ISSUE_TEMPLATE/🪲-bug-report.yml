@@ -1,0 +1,55 @@
+name: "\U0001FAB2 Bug report"
+description: Create a report to help us improve
+title: "[BUG] - YourTitle"
+labels: bug
+projects: []
+assignees: []
+body: 
+  - type: markdown
+    attributes: 
+      value: Provide a clear and detailed description of the bug found
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Bug Description (Expected Behavior vs. Actual)
+      description: A clear and concise description of what the bug is.
+    validations: 
+      required: true
+  - type: textarea
+    id: reproduce-steps
+    attributes: 
+      label: How do we reproduce this?
+      description: Steps to reproduce the behavior
+      placeholder: |
+        - Go to xyz.com
+        - click the red button
+        - The interweb goes down :frowning_face: 
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Add any additional context, screenshots, or examples that can help in understanding and fixing the bug.
+    validations: 
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Pre-Submission Checklist
+      description: Please ensure you've completed the below before posting your question
+      options:
+        - label: I have read the project's contributing guidelines and documentation.
+          required: true
+        - label: I have searched the existing issues to avoid duplicates.
+          required: true
+        - label: I am willing to contribute to this change and follow up on any feedback or questions.
+          required: true
+  - type: input
+    id: contact
+    attributes: 
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
