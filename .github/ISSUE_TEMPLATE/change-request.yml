@@ -1,7 +1,7 @@
 ---
-name: "\U0001F4EC Feature / Change Request"
+name: "Change Request"
 description: A feature request in the form of a user story.
-title: As a <User Type>, I would like <Something>, so that <Reason>
+title: "<User Type> - Change Title"
 labels: Feature Request
 projects: ["Future-Teaching-Institute/projects/1"]
 assignees: []
@@ -12,10 +12,10 @@ body:
   - type: textarea
     id: current-behavior
     attributes:
-      label: Current Behavior (If this is a change request)
+      label: Current Behavior
       description: Describe the current behavior or functionality that the suggested feature should improve upon or add to.
     validations: 
-      required: false
+      required: true
   - type: textarea
     id: use-cases
     attributes: 
@@ -27,7 +27,7 @@ body:
     id: benefit-of-change
     attributes:
       label: Motivation for Change
-      description: Explain the benefits or value that this feature / change would bring to the users or the project.
+      description: Explain the benefits or value that this change would bring to the users or the project.
       placeholder: |
         - It would add hulk like strength to the internet
         - Batman might think it was cool

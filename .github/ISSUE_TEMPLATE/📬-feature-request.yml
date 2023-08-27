@@ -1,5 +1,5 @@
 ---
-name: "\U0001F4EC Feature / Change Request"
+name: "\U0001F4EC Feature Request"
 description: A feature request in the form of a user story.
 title: "<User Type> - Feature Title"
 labels: Feature Request
