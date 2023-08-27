@@ -19,8 +19,8 @@ body:
   - type: textarea
     id: benefit-of-change
     attributes:
-      label: Motivation for Change
-      description: Explain the benefits or value that this feature / change would bring to the users or the project.
+      label: Motivation
+      description: Explain the benefits or value that this feature would bring to the users or the project.
       placeholder: |
         - It would add hulk like strength to the internet
         - Batman might think it was cool
