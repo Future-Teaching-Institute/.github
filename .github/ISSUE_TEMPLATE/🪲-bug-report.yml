@@ -1,8 +1,9 @@
+---
 name: "\U0001FAB2 Bug report"
 description: Create a report to help us improve
 title: "[BUG] - YourTitle"
 labels: bug
-projects: []
+projects: ["Future-Teaching-Institute/projects/1"]
 assignees: []
 body: 
   - type: markdown

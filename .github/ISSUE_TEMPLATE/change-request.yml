@@ -1,14 +1,21 @@
 ---
 name: "\U0001F4EC Feature / Change Request"
 description: A feature request in the form of a user story.
-title: "<User Type> - Feature Title"
+title: As a <User Type>, I would like <Something>, so that <Reason>
 labels: Feature Request
 projects: ["Future-Teaching-Institute/projects/1"]
 assignees: []
 body: 
   - type: markdown
     attributes: 
-      value: Provide a clear and detailed description of the feature or enhancement you are suggesting.
+      value: Provide a clear and detailed description of the change you are suggesting.
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior (If this is a change request)
+      description: Describe the current behavior or functionality that the suggested feature should improve upon or add to.
+    validations: 
+      required: false
   - type: textarea
     id: use-cases
     attributes: 
@@ -31,7 +38,7 @@ body:
     id: additional-info
     attributes:
       label: Additional Information
-      description: Add any additional context, user stories, screenshots, or examples that can help in understanding and implementing the suggested feature.
+      description: Add any additional context, screenshots, or examples that can help in understanding and implementing the suggested feature.
     validations: 
       required: false
   - type: checkboxes

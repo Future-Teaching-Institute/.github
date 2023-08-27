@@ -1,8 +1,9 @@
+---
 name: "\U0001F4C3 Documentation Change Request"
 description: " If there is documentation changes needed use this."
 title: "[Doc] - "
 labels: ["documentation"]
-projects: []
+projects: ["Future-Teaching-Institute/projects/1"]
 assignees: []
 body: 
   - type: markdown

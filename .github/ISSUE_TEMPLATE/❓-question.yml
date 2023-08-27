@@ -1,8 +1,9 @@
+---
 name: "❓ Question"
 description: 'Use this to ask a question. '
 title: "[Question] - YourQuestion"
 labels: ["question"]
-projects: []
+projects: ["Future-Teaching-Institute/projects/1"]
 assignees: []
 body:
   - type: markdown
