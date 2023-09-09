@@ -1,0 +1,63 @@
+# Required setup if using this GitHub Actions workflow:
+# 1. GITHUB_TOKEN set in the repository secrets.
+# 2. DOCKER_USERNAME and DOCKER_TOKEN set in the repository secrets.
+# 3. IMAGE_NAME set in the repository secrets.
+#
+# This workflow performs the following tasks:
+# 1. Checks out the code.
+# 2. Extracts the image version from the pull request body.
+# 3. Builds a Docker image with the specified version.
+# 4. Pushes the Docker image to the GitHub Package Registry.
+# 5. Tags the Docker image as "latest" and pushes it to the GitHub Package Registry.
+
+name: Build and Push Docker Image
+
+on:
+  pull_request:
+    branches:
+      - main_test
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract image version from PR body
+        id: extract-version
+        run: |
+          PR_BODY=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}" | jq -r '.body')
+          VERSION=$(echo "$PR_BODY" | grep -oE 'image version: [0-9]+\.[0-9]+\.[0-9]+' | cut -d' ' -f3)
+          echo "::set-output name=version::$VERSION"
+        shell: bash
+
+      - name: Build Docker image
+        id: build-image
+        run: |
+          VERSION=${{ steps.extract-version.outputs.version }}
+          DOCKER_TAG=$VERSION
+
+          docker build -t ${{ secrets.IMAGE_NAME }}:$DOCKER_TAG .
+          echo "::set-output name=image-tag::${{ secrets.IMAGE_NAME }}:$DOCKER_TAG"
+        shell: bash
+
+      - name: Push Docker image to GitHub Package Registry
+        if: success()
+        run: |
+          echo ${{ secrets.DOCKER_TOKEN }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push docker.pkg.github.com/${{ github.repository_owner }}/${{ secrets.IMAGE_NAME }}:${{ steps.build-image.outputs.image-tag }}
+        shell: bash
+
+      - name: Tag as latest
+        if: success()
+        run: |
+          IMAGE_NAME=${{ secrets.IMAGE_NAME }}
+          VERSION=${{ steps.extract-version.outputs.version }}
+          DOCKER_TAG=$VERSION
+
+          docker tag $IMAGE_NAME:$DOCKER_TAG $IMAGE_NAME:latest
+          docker push docker.pkg.github.com/${{ github.repository_owner }}/$IMAGE_NAME:latest
+        shell: bash
