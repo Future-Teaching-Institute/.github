@@ -1,24 +1,20 @@
-# Pull Request
+# :clipboard: PR Details :clipboard: 
 
-:sparkles: closes #IssueNumber :sparkles:
-
-### Related Issue(s):
-- [Issue #IssueNumber](LinktoIssue)
- 
-
-### Describe the changes:
+### :speaking_head: Describe the changes :speaking_head:
 
 [Please provide a brief description of the changes made in this pull request.]
 
-### Related Issue(s) / Milestone(s):
 
-[Reference any related issues or provide context if applicable.]
-
-#### Additional Notes:
+#### :spiral_notepad: Additional Notes :spiral_notepad:
 
 [Add any additional information or instructions here.]
 
-**Checklist:**
-- [ ] Tests have been added or updated to cover the changes.
-- [ ] Documentation has been updated, if necessary.
-- [ ] Code follows the project's coding conventions.
+## :arrow_down: Do Not Forget :arrow_down:
+
+<!--
+Please fill in the __issueNumber__ so that the issue (you reference by issueNumber) is updated automatically when the PR is merged
+-->
+
+:arrow_right: closes #issueNumber :arrow_left:
+
+## :arrow_up: Do Not Forget :arrow_up:
